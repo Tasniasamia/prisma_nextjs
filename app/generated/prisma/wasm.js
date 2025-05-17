@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.8.2
+ * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.8.2",
+  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -131,7 +131,7 @@ exports.Prisma.ProfileScalarFieldEnum = {
   id: 'id',
   name: 'name',
   pre_address: 'pre_address',
-  per_addresss: 'per_addresss',
+  per_address: 'per_address',
   userId: 'userId'
 };
 
@@ -140,22 +140,22 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.userOrderByRelevanceFieldEnum = {
+exports.Prisma.UserOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password'
 };
 
-exports.Prisma.profileOrderByRelevanceFieldEnum = {
+exports.Prisma.ProfileOrderByRelevanceFieldEnum = {
   name: 'name',
   pre_address: 'pre_address',
-  per_addresss: 'per_addresss'
+  per_address: 'per_address'
 };
 
 
 exports.Prisma.ModelName = {
-  user: 'user',
-  profile: 'profile'
+  User: 'User',
+  Profile: 'Profile'
 };
 
 /**
