@@ -281,6 +281,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+crypto-js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/crypto-js/-/crypto-js-4.2.0.tgz"
+  integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
+
 crypto@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz"
@@ -646,6 +651,11 @@ node-addon-api@^8.3.0:
   version "8.3.1"
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.3.1.tgz"
   integrity sha512-lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==
+
+node-encryption@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/node-encryption/-/node-encryption-2.0.1.tgz"
+  integrity sha512-VPNuwP6qczbOPk0o9X1fZ3wdmosiLz8AZ1aRfVC6JyvU56+dfXvS2dAOxsck1FXmZQ5Fe3SxNKjGTYdkHnpQrg==
 
 node-gyp-build@^4.8.4:
   version "4.8.4"

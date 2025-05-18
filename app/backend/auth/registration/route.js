@@ -1,6 +1,6 @@
 import { PrismaClient } from "@/app/generated/prisma";
 import { NextResponse } from "next/server";
-import { encrypt } from "../../helpers/encrypt";
+import {  encryptBuffer } from "../../helpers/encrypt";
 
 export const POST = async (req) => {
   try {
@@ -8,7 +8,7 @@ export const POST = async (req) => {
     const prisma = new PrismaClient();
     console.log(reqbody?.password);
     if (reqbody?.password) {
-        const hashPassword =encrypt(reqbody?.password); 
+        const hashPassword =encryptBuffer(reqbody?.password); 
         reqbody.password = hashPassword;
         console.log("Hashed password", hashPassword);
       }

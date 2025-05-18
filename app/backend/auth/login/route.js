@@ -1,8 +1,7 @@
 import { PrismaClient } from "@/app/generated/prisma";
 import { NextResponse } from "next/server";
 import { createToken, verifyToken} from "../../helpers/util";
-import { decrypt } from "../../helpers/encrypt";
-const bcrypt = require("bcrypt");
+import { decryptBuffer } from "../../helpers/encrypt";
 export const POST = async (req, res) => {
   try {
     const reqbody = await req.json();
@@ -10,8 +9,8 @@ export const POST = async (req, res) => {
     let getUser = await prisma.user.findUnique({
       where: { email: reqbody?.email },
     });
-    console.log("finduser",getUser);
-   const isMatch=(decrypt(getUser?.password))===reqbody?.password;
+    // console.log("finduser",getUser);
+   const isMatch=(decryptBuffer(getUser?.password))===reqbody?.password;
 
     if (isMatch) {
       let token =await createToken({ email: getUser?.email, id: getUser?.id });

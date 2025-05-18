@@ -127,17 +127,12 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  otp: 'otp'
-};
-
-exports.Prisma.ProfileScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
+  otp: 'otp',
+  otpSentAt: 'otpSentAt',
+  phone_no: 'phone_no',
+  country: 'country',
   pre_address: 'pre_address',
-  per_address: 'per_address',
-  userId: 'userId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  per_address: 'per_address'
 };
 
 exports.Prisma.SortOrder = {
@@ -145,28 +140,25 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.UserOrderByRelevanceFieldEnum = {
-  name: 'name',
-  email: 'email',
-  password: 'password',
-  otp: 'otp'
-};
-
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
 
-exports.Prisma.ProfileOrderByRelevanceFieldEnum = {
+exports.Prisma.UserOrderByRelevanceFieldEnum = {
   name: 'name',
+  email: 'email',
+  password: 'password',
+  otp: 'otp',
+  phone_no: 'phone_no',
+  country: 'country',
   pre_address: 'pre_address',
   per_address: 'per_address'
 };
 
 
 exports.Prisma.ModelName = {
-  User: 'User',
-  Profile: 'Profile'
+  User: 'User'
 };
 
 /**

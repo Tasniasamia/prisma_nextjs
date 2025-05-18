@@ -9,23 +9,19 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String   @unique
-  password String
-  profiles Profile[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  otp      String  @default("0")
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  password     String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  otp          String   @default("0")
+  otpSentAt    DateTime?
+
+  phone_no     String?  @default("")
+  country      String?  @default("")
+  pre_address  String?  @default("")
+  per_address  String?  @default("")
 }
 
-model Profile {
-  id           Int    @id @default(autoincrement())
-  name         String
-  pre_address  String
-  per_address  String
-  userId       Int    @unique
-  user         User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  createdAt DateTime @default(now())
-  updatedAt DateTime? @updatedAt
-}
+
