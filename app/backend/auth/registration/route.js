@@ -1,6 +1,6 @@
 import { PrismaClient } from "@/app/generated/prisma";
 import { NextResponse } from "next/server";
-import { createhasPassword } from "../../helpers/util";
+import { encrypt } from "../../helpers/encrypt";
 
 export const POST = async (req) => {
   try {
@@ -8,15 +8,15 @@ export const POST = async (req) => {
     const prisma = new PrismaClient();
     console.log(reqbody?.password);
     if (reqbody?.password) {
-        console.log("reqbody?.password", reqbody?.name);
-        const hashPassword = await createhasPassword(reqbody.password); 
+        const hashPassword =encrypt(reqbody?.password); 
         reqbody.password = hashPassword;
         console.log("Hashed password", hashPassword);
       }
       
-if(reqbody?.name && reqbody?.email && reqbody?.password){
+if(reqbody){
+    console.log("coming here")
    let getData=await prisma.user.create({
-    data:reqbody
+    data:{...reqbody}
    })
    if(getData){
     return NextResponse.json({success:true,data:getData,message:"User Registred Successfully"});
@@ -28,6 +28,7 @@ else{
 
  
   } catch (e) {
+    console.log("coming here 2");
     return NextResponse.json({
       status: 500,
       success: false,

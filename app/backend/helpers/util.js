@@ -1,21 +1,18 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-export const createToken=({email,name})=>{
-
-
-}
-
-export const getToken=()=>{
+export const createToken=async(payload)=>{
+  let token=jwt.sign(payload, process?.env?.JWT_SECRET, { expiresIn: '24h' });
+  return token;
 
 }
 
-export const createhasPassword = async (password) => {
-    console.log("password",data?.password);
-    if (!password || typeof password !== "string" || password.trim() === "") {
-      throw new Error("data?.password is missing or invalid");
-    }
-    const hashPassword = await bcrypt.hash(password, 10);
-    console.log("Hashing successful:", hashPassword);
-    return hashPassword;
-  };
+export const verifyToken=async(token)=>{
+    const decoded =jwt.verify(token, process?.env?.JWT_SECRET);
+    console.log("decoded",decoded);
+    return decoded;
+
+}
+
+
   

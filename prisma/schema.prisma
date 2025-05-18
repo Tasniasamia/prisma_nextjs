@@ -16,6 +16,7 @@ model User {
   profiles Profile[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  otp      String  @default("0")
 }
 
 model Profile {

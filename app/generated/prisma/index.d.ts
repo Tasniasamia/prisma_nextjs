@@ -999,6 +999,9 @@ export namespace Prisma {
     name: string | null
     email: string | null
     password: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    otp: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1006,6 +1009,9 @@ export namespace Prisma {
     name: string | null
     email: string | null
     password: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    otp: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1013,6 +1019,9 @@ export namespace Prisma {
     name: number
     email: number
     password: number
+    createdAt: number
+    updatedAt: number
+    otp: number
     _all: number
   }
 
@@ -1030,6 +1039,9 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    createdAt?: true
+    updatedAt?: true
+    otp?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1037,6 +1049,9 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    createdAt?: true
+    updatedAt?: true
+    otp?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1044,6 +1059,9 @@ export namespace Prisma {
     name?: true
     email?: true
     password?: true
+    createdAt?: true
+    updatedAt?: true
+    otp?: true
     _all?: true
   }
 
@@ -1138,6 +1156,9 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    createdAt: Date
+    updatedAt: Date
+    otp: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1164,6 +1185,9 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    otp?: boolean
     profiles?: boolean | User$profilesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
@@ -1175,9 +1199,12 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     password?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    otp?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password" | "createdAt" | "updatedAt" | "otp", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     profiles?: boolean | User$profilesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -1193,6 +1220,9 @@ export namespace Prisma {
       name: string
       email: string
       password: string
+      createdAt: Date
+      updatedAt: Date
+      otp: string
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1567,6 +1597,9 @@ export namespace Prisma {
     readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
+    readonly createdAt: FieldRef<"User", 'DateTime'>
+    readonly updatedAt: FieldRef<"User", 'DateTime'>
+    readonly otp: FieldRef<"User", 'String'>
   }
     
 
@@ -1980,6 +2013,8 @@ export namespace Prisma {
     pre_address: string | null
     per_address: string | null
     userId: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ProfileMaxAggregateOutputType = {
@@ -1988,6 +2023,8 @@ export namespace Prisma {
     pre_address: string | null
     per_address: string | null
     userId: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ProfileCountAggregateOutputType = {
@@ -1996,6 +2033,8 @@ export namespace Prisma {
     pre_address: number
     per_address: number
     userId: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -2016,6 +2055,8 @@ export namespace Prisma {
     pre_address?: true
     per_address?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ProfileMaxAggregateInputType = {
@@ -2024,6 +2065,8 @@ export namespace Prisma {
     pre_address?: true
     per_address?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ProfileCountAggregateInputType = {
@@ -2032,6 +2075,8 @@ export namespace Prisma {
     pre_address?: true
     per_address?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -2127,6 +2172,8 @@ export namespace Prisma {
     pre_address: string
     per_address: string
     userId: number
+    createdAt: Date
+    updatedAt: Date | null
     _count: ProfileCountAggregateOutputType | null
     _avg: ProfileAvgAggregateOutputType | null
     _sum: ProfileSumAggregateOutputType | null
@@ -2154,6 +2201,8 @@ export namespace Prisma {
     pre_address?: boolean
     per_address?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
@@ -2165,9 +2214,11 @@ export namespace Prisma {
     pre_address?: boolean
     per_address?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "pre_address" | "per_address" | "userId", ExtArgs["result"]["profile"]>
+  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "pre_address" | "per_address" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
   export type ProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -2183,6 +2234,8 @@ export namespace Prisma {
       pre_address: string
       per_address: string
       userId: number
+      createdAt: Date
+      updatedAt: Date | null
     }, ExtArgs["result"]["profile"]>
     composites: {}
   }
@@ -2558,6 +2611,8 @@ export namespace Prisma {
     readonly pre_address: FieldRef<"Profile", 'String'>
     readonly per_address: FieldRef<"Profile", 'String'>
     readonly userId: FieldRef<"Profile", 'Int'>
+    readonly createdAt: FieldRef<"Profile", 'DateTime'>
+    readonly updatedAt: FieldRef<"Profile", 'DateTime'>
   }
     
 
@@ -2937,7 +2992,10 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     email: 'email',
-    password: 'password'
+    password: 'password',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    otp: 'otp'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -2948,7 +3006,9 @@ export namespace Prisma {
     name: 'name',
     pre_address: 'pre_address',
     per_address: 'per_address',
-    userId: 'userId'
+    userId: 'userId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]
@@ -2965,10 +3025,19 @@ export namespace Prisma {
   export const UserOrderByRelevanceFieldEnum: {
     name: 'name',
     email: 'email',
-    password: 'password'
+    password: 'password',
+    otp: 'otp'
   };
 
   export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   export const ProfileOrderByRelevanceFieldEnum: {
@@ -3000,6 +3069,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -3017,6 +3093,9 @@ export namespace Prisma {
     name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    createdAt?: DateTimeFilter<"User"> | Date | string
+    updatedAt?: DateTimeFilter<"User"> | Date | string
+    otp?: StringFilter<"User"> | string
     profiles?: ProfileListRelationFilter
   }
 
@@ -3025,6 +3104,9 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    otp?: SortOrder
     profiles?: ProfileOrderByRelationAggregateInput
     _relevance?: UserOrderByRelevanceInput
   }
@@ -3037,6 +3119,9 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    createdAt?: DateTimeFilter<"User"> | Date | string
+    updatedAt?: DateTimeFilter<"User"> | Date | string
+    otp?: StringFilter<"User"> | string
     profiles?: ProfileListRelationFilter
   }, "id" | "email">
 
@@ -3045,6 +3130,9 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    otp?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -3060,6 +3148,9 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    otp?: StringWithAggregatesFilter<"User"> | string
   }
 
   export type ProfileWhereInput = {
@@ -3071,6 +3162,8 @@ export namespace Prisma {
     pre_address?: StringFilter<"Profile"> | string
     per_address?: StringFilter<"Profile"> | string
     userId?: IntFilter<"Profile"> | number
+    createdAt?: DateTimeFilter<"Profile"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -3080,6 +3173,8 @@ export namespace Prisma {
     pre_address?: SortOrder
     per_address?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
     user?: UserOrderByWithRelationInput
     _relevance?: ProfileOrderByRelevanceInput
   }
@@ -3093,6 +3188,8 @@ export namespace Prisma {
     name?: StringFilter<"Profile"> | string
     pre_address?: StringFilter<"Profile"> | string
     per_address?: StringFilter<"Profile"> | string
+    createdAt?: DateTimeFilter<"Profile"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "userId">
 
@@ -3102,6 +3199,8 @@ export namespace Prisma {
     pre_address?: SortOrder
     per_address?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrderInput | SortOrder
     _count?: ProfileCountOrderByAggregateInput
     _avg?: ProfileAvgOrderByAggregateInput
     _max?: ProfileMaxOrderByAggregateInput
@@ -3118,12 +3217,17 @@ export namespace Prisma {
     pre_address?: StringWithAggregatesFilter<"Profile"> | string
     per_address?: StringWithAggregatesFilter<"Profile"> | string
     userId?: IntWithAggregatesFilter<"Profile"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Profile"> | Date | string
+    updatedAt?: DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
   }
 
   export type UserCreateInput = {
     name: string
     email: string
     password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    otp?: string
     profiles?: ProfileCreateNestedManyWithoutUserInput
   }
 
@@ -3132,6 +3236,9 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    otp?: string
     profiles?: ProfileUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -3139,6 +3246,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
     profiles?: ProfileUpdateManyWithoutUserNestedInput
   }
 
@@ -3147,6 +3257,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
     profiles?: ProfileUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -3155,12 +3268,18 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    otp?: string
   }
 
   export type UserUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -3168,12 +3287,17 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProfileCreateInput = {
     name: string
     pre_address: string
     per_address: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
     user: UserCreateNestedOneWithoutProfilesInput
   }
 
@@ -3183,12 +3307,16 @@ export namespace Prisma {
     pre_address: string
     per_address: string
     userId: number
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type ProfileUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     user?: UserUpdateOneRequiredWithoutProfilesNestedInput
   }
 
@@ -3198,6 +3326,8 @@ export namespace Prisma {
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
     userId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProfileCreateManyInput = {
@@ -3206,12 +3336,16 @@ export namespace Prisma {
     pre_address: string
     per_address: string
     userId: number
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type ProfileUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProfileUncheckedUpdateManyInput = {
@@ -3220,6 +3354,8 @@ export namespace Prisma {
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
     userId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -3248,6 +3384,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type ProfileListRelationFilter = {
     every?: ProfileWhereInput
     some?: ProfileWhereInput
@@ -3269,6 +3416,9 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    otp?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -3280,6 +3430,9 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    otp?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -3287,6 +3440,9 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    otp?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -3327,9 +3483,39 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type ProfileOrderByRelevanceInput = {
@@ -3344,6 +3530,8 @@ export namespace Prisma {
     pre_address?: SortOrder
     per_address?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ProfileAvgOrderByAggregateInput = {
@@ -3357,6 +3545,8 @@ export namespace Prisma {
     pre_address?: SortOrder
     per_address?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ProfileMinOrderByAggregateInput = {
@@ -3365,11 +3555,27 @@ export namespace Prisma {
     pre_address?: SortOrder
     per_address?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ProfileSumOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type ProfileCreateNestedManyWithoutUserInput = {
@@ -3388,6 +3594,10 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type ProfileUpdateManyWithoutUserNestedInput = {
@@ -3432,6 +3642,10 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type UserUpdateOneRequiredWithoutProfilesNestedInput = {
     create?: XOR<UserCreateWithoutProfilesInput, UserUncheckedCreateWithoutProfilesInput>
     connectOrCreate?: UserCreateOrConnectWithoutProfilesInput
@@ -3464,6 +3678,17 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -3511,10 +3736,62 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type ProfileCreateWithoutUserInput = {
     name: string
     pre_address: string
     per_address: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type ProfileUncheckedCreateWithoutUserInput = {
@@ -3522,6 +3799,8 @@ export namespace Prisma {
     name: string
     pre_address: string
     per_address: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type ProfileCreateOrConnectWithoutUserInput = {
@@ -3559,12 +3838,17 @@ export namespace Prisma {
     pre_address?: StringFilter<"Profile"> | string
     per_address?: StringFilter<"Profile"> | string
     userId?: IntFilter<"Profile"> | number
+    createdAt?: DateTimeFilter<"Profile"> | Date | string
+    updatedAt?: DateTimeNullableFilter<"Profile"> | Date | string | null
   }
 
   export type UserCreateWithoutProfilesInput = {
     name: string
     email: string
     password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    otp?: string
   }
 
   export type UserUncheckedCreateWithoutProfilesInput = {
@@ -3572,6 +3856,9 @@ export namespace Prisma {
     name: string
     email: string
     password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    otp?: string
   }
 
   export type UserCreateOrConnectWithoutProfilesInput = {
@@ -3594,6 +3881,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateWithoutProfilesInput = {
@@ -3601,6 +3891,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    otp?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProfileCreateManyUserInput = {
@@ -3608,12 +3901,16 @@ export namespace Prisma {
     name: string
     pre_address: string
     per_address: string
+    createdAt?: Date | string
+    updatedAt?: Date | string | null
   }
 
   export type ProfileUpdateWithoutUserInput = {
     name?: StringFieldUpdateOperationsInput | string
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProfileUncheckedUpdateWithoutUserInput = {
@@ -3621,6 +3918,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProfileUncheckedUpdateManyWithoutUserInput = {
@@ -3628,6 +3927,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     pre_address?: StringFieldUpdateOperationsInput | string
     per_address?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
 
