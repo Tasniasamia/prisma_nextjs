@@ -30,3 +30,17 @@ model Otp {
   email     String
   action    String
 }
+
+model product_category {
+  id      Int       @id @default(autoincrement())
+  name    String
+  product product[]
+}
+
+model product {
+  id              Int              @id @default(autoincrement())
+  name            String
+  image           String
+  category        Int
+  productCategory product_category @relation(fields: [category], references: [id], onDelete: Restrict, onUpdate: Cascade)
+}

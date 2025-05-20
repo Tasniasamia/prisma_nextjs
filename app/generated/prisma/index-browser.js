@@ -142,6 +142,18 @@ exports.Prisma.OtpScalarFieldEnum = {
   action: 'action'
 };
 
+exports.Prisma.Product_categoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  image: 'image',
+  category: 'category'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -169,10 +181,21 @@ exports.Prisma.OtpOrderByRelevanceFieldEnum = {
   action: 'action'
 };
 
+exports.Prisma.product_categoryOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.productOrderByRelevanceFieldEnum = {
+  name: 'name',
+  image: 'image'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Otp: 'Otp'
+  Otp: 'Otp',
+  product_category: 'product_category',
+  product: 'product'
 };
 
 /**
