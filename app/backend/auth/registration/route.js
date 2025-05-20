@@ -13,8 +13,7 @@ export const POST = async (req) => {
         console.log("Hashed password", hashPassword);
       }
       
-if(reqbody){
-    console.log("coming here")
+if(reqbody?.name && reqbody?.email && reqbody?.password && reqbody?.otp){
    let getData=await prisma.user.create({
     data:{...reqbody}
    })
@@ -23,7 +22,7 @@ if(reqbody){
    }
 }
 else{
-    return NextResponse.json({success:false,message:"Data Missing"});
+    return NextResponse.json({success:false,message:"All fields are required"});
 }
 
  

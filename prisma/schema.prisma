@@ -9,19 +9,24 @@ datasource db {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  name         String
-  email        String   @unique
-  password     String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  otp          String   @default("0")
-  otpSentAt    DateTime?
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  otp       String
 
-  phone_no     String?  @default("")
-  country      String?  @default("")
-  pre_address  String?  @default("")
-  per_address  String?  @default("")
+  phone_no    String? @default("")
+  country     String? @default("")
+  pre_address String? @default("")
+  per_address String? @default("")
 }
 
-
+model Otp {
+  id        Int       @id @default(autoincrement())
+  otp       String
+  otpSentAt DateTime?
+  email     String 
+  action String
+}
