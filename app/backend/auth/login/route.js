@@ -14,6 +14,8 @@ export const POST = async (req, res) => {
 
     if (isMatch) {
       let token =await createToken({ email: getUser?.email, id: getUser?.id });
+      let verifytoken=await verifyToken(token);
+      console.log("verifytoken",verifytoken);
       return NextResponse.json({
         success: true,
         token: token,

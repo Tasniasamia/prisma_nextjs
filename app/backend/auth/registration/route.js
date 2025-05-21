@@ -7,13 +7,14 @@ export const POST = async (req) => {
     const reqbody = await req.json();
     const prisma = new PrismaClient();
     console.log(reqbody?.password);
+    let verifyUser=await prisma.otp.findFirstOrThrow({where:{email:reqbody?.email,action:"signup"}});
     if (reqbody?.password) {
         const hashPassword =encryptBuffer(reqbody?.password); 
         reqbody.password = hashPassword;
         console.log("Hashed password", hashPassword);
       }
       
-if(reqbody?.name && reqbody?.email && reqbody?.password && reqbody?.otp){
+if(reqbody?.name && reqbody?.email && reqbody?.password && verifyUser?.otp){
    let getData=await prisma.user.create({
     data:{...reqbody}
    })
